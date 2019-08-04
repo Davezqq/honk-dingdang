@@ -1,0 +1,8 @@
+aeneas
+google-api-python-client
+librosa
+oauth2client
+pytube
+requests
+sounddevice
+inflect

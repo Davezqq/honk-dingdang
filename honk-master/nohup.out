@@ -1,0 +1,76 @@
+WARNING:root:This caffe2 python run does not have GPU support. Will run in CPU only mode.
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "./__main__.py", line 21, in <module>
+    main()
+  File "./__main__.py", line 18, in main
+    server.start(config)
+  File "./server.py", line 143, in start
+    lbl_service = load_service(config)
+  File "./server.py", line 125, in load_service
+    lbl_service = Caffe2LabelService(model_path, commands)
+  File "./service.py", line 62, in __init__
+    self.model = onnx_caffe2.backend.prepare(self._graph)
+  File "/home/pi/.local/lib/python3.5/site-packages/onnx_caffe2/backend.py", line 513, in prepare
+    super(Caffe2Backend, cls).prepare(model, device, **kwargs)
+  File "/home/pi/.local/lib/python3.5/site-packages/onnx/backend/base.py", line 74, in prepare
+    onnx.checker.check_model(model)
+  File "/home/pi/.local/lib/python3.5/site-packages/onnx/checker.py", line 86, in check_model
+    C.check_model(model.SerializeToString())
+onnx.onnx_cpp2py_export.checker.ValidationError: Unrecognized attribute: dilations for operator MaxPool
+
+==> Context: Bad node spec: input: "13" output: "15" op_type: "MaxPool" attribute { name: "kernel_shape" ints: 2 ints: 2 } attribute { name: "pads" ints: 0 ints: 0 } attribute { name: "dilations" ints: 1 ints: 1 } attribute { name: "strides" ints: 2 ints: 2 }
+False
+WARNING:root:This caffe2 python run does not have GPU support. Will run in CPU only mode.
+/home/pi/.local/lib/python3.5/site-packages/onnx_caffe2/backend.py:523: UserWarning: This version of onnx-caffe2 targets ONNX operator set version 2, but the model we are trying to import uses version 9.  We will try to import it anyway, but if the model uses operators which had BC-breaking changes in the intervening versions, import will fail.
+  warnings.warn("This version of onnx-caffe2 targets ONNX operator set version {}, but the model we are trying to import uses version {}.  We will try to import it anyway, but if the model uses operators which had BC-breaking changes in the intervening versions, import will fail.".format(cls._known_opset_version, imp.version))
+[23/Jul/2019:10:17:27] ENGINE Bus STARTING
+INFO:cherrypy.error:[23/Jul/2019:10:17:27] ENGINE Bus STARTING
+[23/Jul/2019:10:17:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+INFO:cherrypy.error:[23/Jul/2019:10:17:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+[23/Jul/2019:10:17:27] ENGINE Serving on http://0.0.0.0:16888
+INFO:cherrypy.error:[23/Jul/2019:10:17:27] ENGINE Serving on http://0.0.0.0:16888
+[23/Jul/2019:10:17:27] ENGINE Bus STARTED
+INFO:cherrypy.error:[23/Jul/2019:10:17:27] ENGINE Bus STARTED
+WARNING:root:This caffe2 python run does not have GPU support. Will run in CPU only mode.
+/home/pi/.local/lib/python3.5/site-packages/onnx_caffe2/backend.py:523: UserWarning: This version of onnx-caffe2 targets ONNX operator set version 2, but the model we are trying to import uses version 9.  We will try to import it anyway, but if the model uses operators which had BC-breaking changes in the intervening versions, import will fail.
+  warnings.warn("This version of onnx-caffe2 targets ONNX operator set version {}, but the model we are trying to import uses version {}.  We will try to import it anyway, but if the model uses operators which had BC-breaking changes in the intervening versions, import will fail.".format(cls._known_opset_version, imp.version))
+[23/Jul/2019:10:17:52] ENGINE Bus STARTING
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Bus STARTING
+[23/Jul/2019:10:17:52] ENGINE Started monitor thread '_TimeoutMonitor'.
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Started monitor thread '_TimeoutMonitor'.
+[23/Jul/2019:10:17:52] ENGINE Error in HTTP server: shutting down
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.5/site-packages/cherrypy/process/servers.py", line 225, in _start_http_thread
+    self.httpserver.start()
+  File "/home/pi/.local/lib/python3.5/site-packages/cheroot/server.py", line 1814, in start
+    self.prepare()
+  File "/home/pi/.local/lib/python3.5/site-packages/cheroot/server.py", line 1773, in prepare
+    raise socket.error(msg)
+OSError: No socket could be created -- (('0.0.0.0', 16888): [Errno 98] Address already in use)
+
+ERROR:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Error in HTTP server: shutting down
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.5/site-packages/cherrypy/process/servers.py", line 225, in _start_http_thread
+    self.httpserver.start()
+  File "/home/pi/.local/lib/python3.5/site-packages/cheroot/server.py", line 1814, in start
+    self.prepare()
+  File "/home/pi/.local/lib/python3.5/site-packages/cheroot/server.py", line 1773, in prepare
+    raise socket.error(msg)
+OSError: No socket could be created -- (('0.0.0.0', 16888): [Errno 98] Address already in use)
+
+[23/Jul/2019:10:17:52] ENGINE Bus STOPPING
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Bus STOPPING
+[23/Jul/2019:10:17:52] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 16888)) already shut down
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 16888)) already shut down
+[23/Jul/2019:10:17:52] ENGINE Stopped thread '_TimeoutMonitor'.
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Stopped thread '_TimeoutMonitor'.
+[23/Jul/2019:10:17:52] ENGINE Bus STOPPED
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Bus STOPPED
+[23/Jul/2019:10:17:52] ENGINE Bus EXITING
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Bus EXITING
+[23/Jul/2019:10:17:52] ENGINE Bus EXITED
+INFO:cherrypy.error:[23/Jul/2019:10:17:52] ENGINE Bus EXITED
